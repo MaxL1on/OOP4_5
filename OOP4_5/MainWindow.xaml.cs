@@ -78,6 +78,8 @@ namespace OOP4_5
         }
         private void Color_Click(object sender, RoutedEventArgs e)
         {
+            Run r = new Run("", this.rtbEditor.CaretPosition);
+            r.Foreground = new SolidColorBrush(_Picker.SelectedColor.GetValueOrDefault());
         }
     }
 }

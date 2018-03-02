@@ -43,7 +43,7 @@
             <Separator />
             <ComboBox Name="cmbFontFamily" Width="150" SelectionChanged="cmbFontFamily_SelectionChanged" Margin="0,0,0,1.4" VerticalAlignment="Bottom" />
             <ComboBox Name="cmbFontSize" Width="50" IsEditable="True" TextBoxBase.TextChanged="cmbFontSize_TextChanged" />
-            <tool:ColorPicker x:Name="_Picker"/>
+            <tool:ColorPicker x:Name="_Picker" SelectedColorChanged="Color_Click"/>
         </ToolBar>
         <RichTextBox Name="rtbEditor" SelectionChanged="rtbEditor_SelectionChanged" />
     </DockPanel>
