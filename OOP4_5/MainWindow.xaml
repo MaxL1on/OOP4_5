@@ -45,6 +45,11 @@
             <ComboBox Name="cmbFontSize" Width="50" IsEditable="True" TextBoxBase.TextChanged="cmbFontSize_TextChanged" />
             <tool:ColorPicker x:Name="_Picker" SelectedColorChanged="Color_Click"/>
         </ToolBar>
+        <StatusBar DockPanel.Dock="Bottom">
+            <StatusBarItem>
+                <TextBlock Name="statusText" >Chars selected: 0</TextBlock>
+            </StatusBarItem>
+        </StatusBar>
         <RichTextBox Name="rtbEditor" SelectionChanged="rtbEditor_SelectionChanged" />
     </DockPanel>
 </Window>

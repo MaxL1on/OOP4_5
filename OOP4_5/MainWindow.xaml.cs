@@ -11,6 +11,7 @@ using System.Text;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System;
 
 namespace OOP4_5
 {
@@ -38,7 +39,11 @@ namespace OOP4_5
             cmbFontFamily.SelectedItem = temp;
             temp = rtbEditor.Selection.GetPropertyValue(Inline.FontSizeProperty);
             cmbFontSize.Text = temp.ToString();
+
+            int chars = rtbEditor.Selection.Text.Length;
+            statusText.Text = "Выделенно символов " + (chars);
         }
+      
 
         private void Open_Executed(object sender, ExecutedRoutedEventArgs e)
         {
@@ -78,8 +83,10 @@ namespace OOP4_5
         }
         private void Color_Click(object sender, RoutedEventArgs e)
         {
-            Run r = new Run("", this.rtbEditor.CaretPosition);
-            r.Foreground = new SolidColorBrush(_Picker.SelectedColor.GetValueOrDefault());
+            SolidColorBrush b = new SolidColorBrush(_Picker.SelectedColor.GetValueOrDefault());
+            rtbEditor.Selection.ApplyPropertyValue(Inline.ForegroundProperty, b);
         }
+
+        
     }
 }
